@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  network: one
+  package_type: 1
+  name: MyString
+  price: 1
+  detail: MyString
+  description: MyString
+  validity: MyString
+  subscription_code: MyString
+  area: MyString
+
+two:
+  network: two
+  package_type: 1
+  name: MyString
+  price: 1
+  detail: MyString
+  description: MyString
+  validity: MyString
+  subscription_code: MyString
+  area: MyString
