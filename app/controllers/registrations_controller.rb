@@ -18,5 +18,4 @@ class RegistrationsController < ApplicationController
       render json: { status: 500 }
     end
   end
-  
 end
