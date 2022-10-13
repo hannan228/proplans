@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class CommentReply < ApplicationRecord
   belongs_to :user
   belongs_to :comment
 
-  #validarions
+  # validarions
   validates_presence_of :reply
 end

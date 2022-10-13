@@ -1,24 +1,22 @@
-class SessionsController < ApplicationController
+# frozen_string_literal: true
 
+class SessionsController < ApplicationController
   def create
-    user = User.find_by(email: params["email"]).try(:authenticate, params["password"])
+    user = User.find_by(email: params['email']).try(:authenticate, params['password'])
 
     if user
       session[:user_id] = user.id
-      flash[:notice] = "Successfully logged in."
-      redirect_to packages_path
+      redirect_to packages_path, flash: { notice: 'Successfully logged in.' }
     else
-      flash[:alert] = "something went wrong"
-      redirect_to new_user_session_path
+      redirect_to new_user_session_path, flash: { alert: 'email/password is not correct' }
     end
   end
 
-  def logged_in
-  end
+  def logged_in; end
 
   def logout
     session.delete(:user_id)
-    flash[:notice] = "You have successfully logged out."
+    flash[:notice] = 'You have successfully logged out.'
     redirect_to packages_path
   end
 end

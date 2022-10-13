@@ -1,5 +1,6 @@
-class PackagesController < ApplicationController
+# frozen_string_literal: true
 
+class PackagesController < ApplicationController
   def index
     @package = Package.all
   end
@@ -12,21 +13,18 @@ class PackagesController < ApplicationController
     @user = @current_user
     @package = @user.packages.build(set_params)
     if @package.save
-        flash[:notice] = "Bug was created successfully."
-        redirect_to package_path(@bug)
+      flash[:notice] = 'Bug was created successfully.'
+      redirect_to package_path(@package)
     else
-        render :new, status: :unprocessable_entity 
+      render :new, status: :unprocessable_entity
     end
   end
 
-  def edit
-  end
+  def edit; end
 
-  def delete
-  end
+  def delete; end
 
-  def set_package
-  end
+  def set_package; end
 
   private
 

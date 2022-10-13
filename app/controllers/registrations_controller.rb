@@ -1,5 +1,6 @@
-class RegistrationsController < ApplicationController
+# frozen_string_literal: true
 
+class RegistrationsController < ApplicationController
   def create
     user = User.create!(
       name: params['name'],

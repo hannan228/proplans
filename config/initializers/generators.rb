@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # https://pawelurbanek.com/uuid-order-rails
 # https://www.youtube.com/watch?v=iJY09LPdTPE
 Rails.application.config.generators do |g|

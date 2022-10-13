@@ -1,5 +1,6 @@
-class UserMailer < ApplicationMailer
+# frozen_string_literal: true
 
+class UserMailer < ApplicationMailer
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
@@ -10,6 +11,6 @@ class UserMailer < ApplicationMailer
     @token = token
     @email = email_to
 
-    mail(to: email_to, subject: "Bundle - Password Reset Token")
+    mail(to: email_to, subject: 'Bundle - Password Reset Token')
   end
 end
