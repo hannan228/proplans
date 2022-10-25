@@ -1,0 +1,27 @@
+<div class="action">
+  <div class="profile" onclick="menuToggle();">
+    <img src="assets/avatar.png" />
+  </div>
+  <div class="menu" style="overflow-y:scroll; overflow-x:hidden; height:400px;">
+    <h3>Someone Famous<br /><span>Website Designer</span></h3>
+    <ul>
+      <% if @current_user %>
+        <li><%=image_tag("/assets/avatar.png")%><a href="#">My profile</a></li>
+        <li><%=image_tag("edit.png")%><a href=<%= new_user_session_path%>>Edit profile</a></li>
+        <li><%=image_tag("/assets/log-out.png")%><a href=<%= destroy_user_session_path%>>Logout</a></li>
+        <li><%=image_tag("envelope.png")%><a href="#">Inbox</a></li>
+        <li><%=image_tag("settings.png")%><a href="#">Setting</a></li>
+        <li><%=image_tag("question.png")%><a href="#">Help</a></li>
+      <% else %>
+        <li><%= bootstrap_icon "check", width: 30 %><a href=<%= new_user_session_path%>>Login</a></li>
+        <li><%=image_tag("add-account.png")%><a href=<%= new_user_path%>>Add Account</a></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<script>
+  function menuToggle() {
+    const toggleMenu = document.querySelector(".menu");
+    toggleMenu.classList.toggle("active");
+  }
+</script>

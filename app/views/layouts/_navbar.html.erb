@@ -6,18 +6,23 @@
   .nav_danger_btn:hover {
     color: white;
   }
+  a:hover {
+    text-decoration-line: underline;
+    text-decoration-color: green;  
+    border-left: 5px solid green;
+  }
 </style>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">All Network Package</a>
+      <a class="navbar-brand" href="/" style= "color:">All Networks</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse row" id="navbarSupportedContent">
-        <div class="col-md-6">
+        <div>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <% if current_page?('/') %>
@@ -27,7 +32,7 @@
                 <%# if home page is not active then %>
                 <a class="nav-link"  aria-current="page" href="/">Home</a>
               <% end %>
-            </li> 
+            </li>
 
             <li class="nav-item">
               <% if current_page?('/projects') %>
@@ -38,23 +43,15 @@
                 <a class="nav-link"  aria-current="page" href="/packages">Packages</a>
               <% end %>
             </li>
+            <li class="nav-item"><%= render partial: 'layouts/profile' %></li>
           </ul>
         </div>
-        <div class="col-md-6">
-          <%# <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-light" type="submit">Search</button>
-          </form> %>
-          <div class="d-grid ms-2 gap-2 d-md-block">
+        <div>
+          <%# <%= render partial: 'layouts/profile' %>
+          <%# <div class="d-grid ms-2 gap-2 d-md-block">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <% if @current_user %>
-                <li><%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: "nav_danger_btn btn btn-danger" %></li>
-              <% else %>
-                <li><%= link_to "Sign Up", new_user_path,  class: "nav_danger_btn btn btn-primary" %><li>
-                <li><%= link_to "Login", new_user_session_path,  class: "nav_danger_btn btn btn-primary" %><li>
-              <% end %>
             </ul>
-          </div>
+          </div> %>
         </div>
       </div>
     </div>
